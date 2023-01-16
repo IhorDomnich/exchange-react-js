@@ -8,7 +8,7 @@
 
 ## Demo
 
-https://ihordomnich.github.io/exchenge-react-js/
+https://ihordomnich.github.io/exchange-react-js/
 ## Technologies
 
 - HTML

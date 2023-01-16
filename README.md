@@ -9,7 +9,6 @@
 ## Demo
 
 https://ihordomnich.github.io/exchenge-react-js/
-
 ## Technologies
 
 - HTML

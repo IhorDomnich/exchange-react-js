@@ -16,36 +16,25 @@
 .form__button {
     width: 100%;
     border: none;
-    background-color: #3e1fda;
+    background-color: teal;
     color: white;
     padding: 10px;
     border-radius: 5px;
 }
 
 .form__button:hover {
-    background-color: hsl(250, 75%, 35%); 
+    background-color:  hsl(180, 100%, 35%); 
 }
 
 .form__button:active {
-    background-color: hsl(250, 75%, 45%); 
-}
-
-.form__fieldset {
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 5px;
-    margin: 20px 0;
+    background-color:  hsl(180, 100%, 30%); 
 }
 
 .form__header {
-    background-color: #3e1fda;
+    background-color: hsl(180, 100%, 25%);
     color: white;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 10px;
-    text-align: center;
-}
+    text-align: left;
 
-.form__result {
-   text-align: center;
-   color: #000000;
 }

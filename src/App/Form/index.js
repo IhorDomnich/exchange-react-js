@@ -51,7 +51,7 @@ export const Form = ({ calculateResult, result }) => {
                                 {currency.name}
                             </option>
                         )))}
-                        </select>
+                    </select>
                 </label>
             </p>
             <p>

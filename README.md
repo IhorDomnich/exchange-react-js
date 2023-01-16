@@ -1,6 +1,6 @@
 # Exchenge
 
-![Add list](https://github.com/IhorDomnich/exchenge-react-js/blob/main/public/777777.jpg)
+![Exchenge-react](https://github.com/IhorDomnich/exchenge-react-js/blob/main/public/777777.jpg)
 
 ## Description
 

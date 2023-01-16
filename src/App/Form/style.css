@@ -37,11 +37,12 @@
     margin: 20px 0;
 }
 
-.form__legend {
+.form__header {
     background-color: #3e1fda;
     color: white;
     border-radius: 5px;
     padding: 10px;
+    text-align: center;
 }
 
 .form__result {

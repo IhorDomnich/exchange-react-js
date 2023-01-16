@@ -1,12 +1,12 @@
-# Tasks list
+# Exchenge
 
 ![Add list](https://github.com/IhorDomnich/exchenge-react-js/blob/main/public/777777.jpg)
 
-# Description
+## Description
 
-This is a regular task sheet. In it, you can add a task, mark it as completed and also delete it.
+ This is a currency exchanger. He can show you how many PLN in EUR or USD.
 
-# Demo
+## Demo
 
 https://ihordomnich.github.io/exchenge-react-js/
 

@@ -11,7 +11,7 @@ const fotmatDate = (date) =>  date.toLocaleString(undefined, {
 });
 
 export const Clock = () => {
-    const [date, satDate] = useState(new Date());
+    const [date, setDate] = useState(new Date());
 
     useEffect(() => {
         const intervalID = setInterval(() => {

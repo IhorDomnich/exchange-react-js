@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { currencies } from "../currencies";
 import { Result } from "./Result";
-import "./style.css";
+import { Button, Field, Header, LabelTExt } from "./styled";
 
 export const Form = ({ calculateResult, result }) => {
     const [currency, setCurrency] = useState(currencies[0].short);
@@ -13,20 +13,19 @@ export const Form = ({ calculateResult, result }) => {
     }
 
     return (
-        <form className="form" onSubmit={onSubmit}>
-            <h1 className="form__header">
+        <form onSubmit={onSubmit}>
+            <Header>
                 Exchange
-            </h1>
+            </Header>
             <p>
                 <label>
-                    <span className="form__lableText">
+                    <LabelTExt>
                         Enter the amount PLN*:
-                    </span>
-                    <input
+                    </LabelTExt>
+                    <Field
                         value={amount}
                         onChange={({ target }) => setAmount(target.value)}
                         placeholder=" Enter the amount PLN"
-                        className="form__field"
                         type="number"
                         required
                         step="0.01"
@@ -35,11 +34,11 @@ export const Form = ({ calculateResult, result }) => {
             </p>
             <p>
                 <label>
-                    <span className="form__lableText">
+                    <LabelTExt>
                         Currency
-                    </span>
-                    <select
-                        className="form__field"
+                    </LabelTExt>
+                    <Field
+                        as="select"
                         value={currency}
                         onChange={({ target }) => setCurrency(target.value)}
                     >
@@ -51,11 +50,11 @@ export const Form = ({ calculateResult, result }) => {
                                 {currency.name}
                             </option>
                         )))}
-                    </select>
+                    </Field>
                 </label>
             </p>
             <p>
-                <button className="form__button">Calculate!</button>
+                <Button>Calculate!</Button>
             </p>
 
             <Result result={result} />

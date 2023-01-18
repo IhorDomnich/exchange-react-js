@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./style.css";
+import { Wrapper } from "./styled"
 
-const fotmatDate = (date) =>  date.toLocaleString(undefined, {
+const fotmatDate = (date) => date.toLocaleString(undefined, {
     weekday: "long",
     hour: "2-digit",
     minute: "2-digit",
@@ -24,10 +24,10 @@ export const Clock = () => {
     }, []);
 
     return (
-        <div className="clock">
+        <Wrapper>
             Date:
             {" "}
             {fotmatDate(date)}
-        </div>
+        </Wrapper>
     )
 };

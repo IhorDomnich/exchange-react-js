@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Wrapper } from "./styled"
+import { useCurrentDate } from "./useCurrentDate";
+import { Wrapper } from "./styled";
 
 const fotmatDate = (date) => date.toLocaleString(undefined, {
     weekday: "long",
@@ -11,17 +12,7 @@ const fotmatDate = (date) => date.toLocaleString(undefined, {
 });
 
 export const Clock = () => {
-    const [date, setDate] = useState(new Date());
-
-    useEffect(() => {
-        const intervalID = setInterval(() => {
-            setDate(new Date());
-        }, 1000);
-
-        return () => {
-            clearInterval(intervalID);
-        };
-    }, []);
+    const date = useCurrentDate();
 
     return (
         <Wrapper>
@@ -30,4 +21,5 @@ export const Clock = () => {
             {fotmatDate(date)}
         </Wrapper>
     )
+
 };

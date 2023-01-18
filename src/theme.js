@@ -5,6 +5,6 @@ export const theme = {
         boulde: "#777",
         silver: "#ccc",
         white: "#fff",
-        teal: "#00808",
+        teal: "#008080",
     },
 };

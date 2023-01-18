@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Header = styled.header`
-    background-color: ${({ theme }) => theme.color.white};
-    color: ${({ theme }) => theme.color.teal};
+    background-color: ${({ theme }) => theme.color.teal};
+    color: ${({ theme }) => theme.color.white};
     border-radius: 10px;
     padding: 10px;
     text-align: left;
@@ -16,7 +16,7 @@ export const LabelTExt = styled.span`
 `;
 
 export const Field = styled.input`
-     border: 1px solid ${({ theme }) => theme.color.silver};
+    border: 1px solid ${({ theme }) => theme.color.silver};
     padding: 10px;
     width: 100%;
     max-width: 400px;
@@ -24,7 +24,7 @@ export const Field = styled.input`
 `;
 
 export const Button = styled.button`
-     width: 100%;
+    width: 100%;
     border: none;
     background-color: ${({ theme }) => theme.color.teal};
     color: ${({ theme }) => theme.color.white};

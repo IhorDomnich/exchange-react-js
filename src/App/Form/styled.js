@@ -8,7 +8,7 @@ export const Header = styled.header`
     text-align: left;
 `;
 
-export const LabelTExt = styled.span`
+export const LabelText = styled.span`
     width: 100%;
     max-width: 170px;
     display: inline-block;
@@ -38,4 +38,12 @@ export const Button = styled.button`
     &:active {
         filter: brightness(120%)
     }
+`;
+
+export const Loading = styled.p`
+    color: ${({ theme }) => theme.color.teal};
+`;
+
+export const Failure = styled.p`
+    color: ${({ theme }) => theme.color.crimson};
 `;

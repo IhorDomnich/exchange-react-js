@@ -1,10 +1,23 @@
-import React, { useState } from "react";
-import { currencies } from "../currencies";
+import { useState } from "react";
 import { Result } from "./Result";
-import { Button, Field, Header, LabelTExt } from "./styled";
+import { useRatesData } from "./useRatesData";
+import { Button, Field, Header, LabelText, Loading, Failure } from "./styled";
 
-export const Form = ({ calculateResult, result }) => {
-    const [currency, setCurrency] = useState(currencies[0].short);
+export const Form = () => {
+    const [result, setResult] = useState();
+    const ratesData = useRatesData();
+
+    const calculateResult = (currency, amount) => {
+        const rate = ratesData.rates[currency];
+
+        setResult({
+            sourseAmount: +amount,
+            targetAmount: amount * rate,
+            currency,
+        });
+    }
+
+    const [currency, setCurrency] = useState("EUR");
     const [amount, setAmount] = useState("");
 
     const onSubmit = (event) => {
@@ -17,47 +30,64 @@ export const Form = ({ calculateResult, result }) => {
             <Header>
                 Exchange
             </Header>
-            <p>
-                <label>
-                    <LabelTExt>
-                        Enter the amount PLN*:
-                    </LabelTExt>
-                    <Field
-                        value={amount}
-                        onChange={({ target }) => setAmount(target.value)}
-                        placeholder=" Enter the amount PLN"
-                        type="number"
-                        required
-                        step="0.01"
-                    />
-                </label>
-            </p>
-            <p>
-                <label>
-                    <LabelTExt>
-                        Currency
-                    </LabelTExt>
-                    <Field
-                        as="select"
-                        value={currency}
-                        onChange={({ target }) => setCurrency(target.value)}
-                    >
-                        {currencies.map((currency => (
-                            <option
-                                key={currency.short}
-                                value={currency.short}
-                            >
-                                {currency.name}
-                            </option>
-                        )))}
-                    </Field>
-                </label>
-            </p>
-            <p>
-                <Button>Calculate!</Button>
-            </p>
+            {ratesData.state === "loading"
+                ? (
+                    <Loading>
+                        Loading....
+                    </Loading>
+                )
+                : (
+                    ratesData.state === "error" ? (
+                        <Failure>
+                            Error....Check your internet connection
+                        </Failure>
+                    ) : (
+                        <>
+                            <p>
+                                <label>
+                                    <LabelText>
+                                        Enter the amount PLN*:
+                                    </LabelText>
+                                    <Field
+                                        value={amount}
+                                        onChange={({ target }) => setAmount(target.value)}
+                                        placeholder=" Enter the amount PLN"
+                                        type="number"
+                                        autoFocus
+                                        required
+                                        step="0.01"
+                                    />
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <LabelText>
+                                        Currency:
+                                    </LabelText>
+                                    <Field
+                                        as="select"
+                                        value={currency}
+                                        onChange={({ target }) => setCurrency(target.value)}
+                                    >
+                                        {!!ratesData.rates && Object.keys(ratesData.rates).map(((currency) => (
+                                            <option
+                                                key={currency}
+                                                value={currency}
+                                            >
+                                                {currency}
+                                            </option>
+                                        )))}
+                                    </Field>
+                                </label>
+                            </p>
+                            <p>
+                                <Button>Calculate!</Button>
+                            </p>
 
-            <Result result={result} />
+                            <Result result={result} />
+                        </>
+                    )
+                )}
         </form>
     );
 };

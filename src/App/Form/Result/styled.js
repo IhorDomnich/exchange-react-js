@@ -5,4 +5,3 @@ export const Wrapper = styled.p`
     text-align: center;
     font-size: 20px;
 `;
-

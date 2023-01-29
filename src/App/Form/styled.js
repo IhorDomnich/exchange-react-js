@@ -29,7 +29,7 @@ export const Button = styled.button`
     background-color: ${({ theme }) => theme.color.teal};
     color: ${({ theme }) => theme.color.white};
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
 
     &:hover {
         filter: brightness(110%)

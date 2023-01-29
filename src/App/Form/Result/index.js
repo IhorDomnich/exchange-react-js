@@ -2,14 +2,15 @@ import { Wrapper } from "./styled";
 
 export const Result = ({ result }) => (
     <Wrapper>
-        {!!result && (
+        {result !== undefined && (
             <>
-                {result.sourceAmount.toFixed(2)}&nbsp;PLN&nbsp;=
-                {" "}
+                {result.sourceAmount} {result.targetAmount} =
                 <strong>
-                    {result.targetAmount.toFixed(2)}&nbsp;{result.currency}
+                    {result.currency}
                 </strong>
+                &nbsp; {result.targetAmount}
             </>
         )}
     </Wrapper>
 );
+

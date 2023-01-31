@@ -4,11 +4,10 @@ export const Result = ({ result }) => (
     <Wrapper>
         {result !== undefined && (
             <>
-                {result.sourceAmount} {result.targetAmount} =
+                {result.sourceAmount}&nbsp;PLN&nbsp;=&nbsp;
                 <strong>
-                    {result.currency}
+                    {result.targetAmount.toFixed(2)}&nbsp;{result.currency}
                 </strong>
-                &nbsp; {result.targetAmount}
             </>
         )}
     </Wrapper>

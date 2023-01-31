@@ -39,7 +39,7 @@ export const Form = () => {
                 : (
                     ratesData.state === "error" ? (
                         <Failure>
-                            Error....Check your internet connection
+                            Error... Check your internet connection
                         </Failure>
                     ) : (
                         <>
